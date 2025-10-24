@@ -1,32 +1,29 @@
-//Level 1 — Basics of Props
-//Exercise 1 — Greeting Card
-//Create a component <Greeting /> that takes props:
-//	•	name (string)
-//	•	age (number)
-//and displays:
-//Hello, my name is {name} and I am {age} years old!
-//Then render it twice in <App /> with different props.
-//(Goal: understand how to pass and read props)
+/*Exercise 2 — Avatar Card
+Create a component <Avatar /> that takes props:
+  •	image (string, URL)
+  •	firstName
+  •	lastName
+and displays the person’s picture and full name.
 
-import Greeting from "./Greeting";
+(Goal: pass multiple props and render them dynamically)*/
 
-function App() {
-  const greet = [
-    {
-      name: "Serah",
-      age: 23
-    },
-    {
-      name: "Virgile",
-      age: 29
-    }]
+import Avatar from "./Avatar";
 
+export default function App() {
+  const Avatars = [{
+    imgSrc: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Portrait_of_Neytiri.jpg",
+    firstName: "Neytiri",
+    lastName: "Avatar"
+  },
+  {
+    imgSrc: "https://static.wikia.nocookie.net/james-camerons-avatar/images/1/1e/Lo%27ak.jpg/revision/latest/scale-to-width-down/1200?cb=20221230185604&path-prefix=fr",
+    firstName: "Lo'ak",
+    lastName: "Avatar"
+  }]
   return (
     <>
-      <Greeting greet={greet[0]} />
-      <Greeting greet={greet[1]} />
+      <Avatar avatar={Avatars[0]} />
+      <Avatar avatar={Avatars[1]} />
     </>
   )
 }
-
-export default App
