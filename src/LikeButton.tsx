@@ -10,10 +10,15 @@ When clicked, it should change state.
 import { useState } from "react"
 
 export function LikeButton() {
-    const [like, setLike] = useState("🤍")
+    const [like, setLike] = useState(false)
+
+    function ToggleLike() {
+        setLike(!like)
+    }
+
     return (
         <>
-            <button type="button" onClick={() => setLike("❤️")}>{like}</button >
+            <button type="button" onClick={(ToggleLike)}>{like ? "❤️" : "🤍"}</button >
         </>
     )
 }
